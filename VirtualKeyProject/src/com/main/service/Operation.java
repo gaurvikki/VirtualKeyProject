@@ -1,6 +1,5 @@
 package com.main.service;
 
-import java.util.Iterator;
 import java.util.TreeSet;
 
 import Storage.FileDomain;
@@ -12,36 +11,33 @@ public class Operation {
 	TreeSet<String> fileDirectory = fileDomain.getDirectory();
 
 	public void printDirectory() {
-//		Iterator<String> itr = fileDirectory.iterator();
-//		while (itr.hasNext()) {
-//			System.out.println(itr);
-//		}
+		System.out.println("Existing File directory List:");
 		fileDirectory.forEach( element -> {
-		    System.out.println("Printing directory list"+element);
+		    System.out.println(element);
 		});
 	}
 
 	public void addToDirectory() {
 		String fileName = display.readFromDisplay();
 		fileDirectory.add(fileName);
-		System.out.println("file/folder "+fileName+" added successfully in directory");
+		System.out.println("file/folder "+fileName+" added successfully in directory\n");
 	}
 
 	public void deleteFromDirectory() {
 		String fileName = display.readFromDisplay();
 		if (fileDirectory.remove(fileName)) {
-			System.out.println("Successfully deleted");
+			System.out.println("Successfully deleted\n");
 		}else {
-		System.out.println("FNF(File not found)");
+		System.out.println("FNF(File not found)\n");
 		}
 	}
 
 	public void search() {
 		String fileName = display.readFromDisplay();
 		if(fileDirectory.contains(fileName)) {
-			System.out.println("file found in directory");
+			System.out.println("file found in directory\n");
 		}else {
-		System.out.println("File not found in directory");
+		System.out.println("File not found in directory\n");
 		}
 	}
 

@@ -3,11 +3,9 @@ package com.main.service;
 import java.util.Scanner;
 
 public class UserOperations {
-	// Shows opertaionss : 1-4 - Done
 	Display display = new Display();
 	Operation operation = new Operation();
-
-	// calls Oerataion class based user input
+     
 	public void doOperations() {
 		display.printFileOperations();
 		System.out.println("Enter value:");
@@ -36,7 +34,10 @@ public class UserOperations {
 				System.out.println("Wrong input");
 				break;
 			}
-			System.out.flush();
 		}
+		
+	}
+	public void printDirectoryList() {
+		operation.printDirectory();
 	}
 }
